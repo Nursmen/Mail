@@ -1,4 +1,3 @@
-// get all div with row class
 let called = false;
 
 let rows = document.getElementsByClassName('row');
@@ -61,7 +60,9 @@ function showmail(email){
 
     reply.classList.add('btn');
     reply.classList.add('btn-primary');
-
+    reply.classList.add(`${email.id}`);
+    reply.classList.add('reply');
+    
     div.classList.add('container');
 
     body.classList.add('border-top');

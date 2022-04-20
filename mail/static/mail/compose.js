@@ -19,14 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(result => {
             if (result.code === 201) {
-                alert('Email sent successfully');
+                console.log('Email sent successfully');
             }
             else {
-                alert('Email not sent');
+                console.log('Email not sent');
                 console.log(result['error']);
             }
         });
-
-        return false;
     };
 });
