@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('click', temp);
+
 function temp(){
     if (rows != null && rows.length > 0) {
 
         for (let i = 0; i < rows.length; i++) {
 
             rows[i].addEventListener('click', function () {
-                console.log(rows[i]);
                 chowmemail(rows[i]);
             });
 

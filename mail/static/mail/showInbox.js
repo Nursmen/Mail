@@ -27,7 +27,7 @@ function check() {
 
         }        
 
-        if (checkType.innerHTML == '<h3>Archived</h3>'){
+        if (checkType.innerHTML == '<h3>Archive</h3>'){
 
             fetch('/emails/archive')
             .then(response => response.json())
