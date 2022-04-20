@@ -1,0 +1,9 @@
+textarea {
+    min-height: 400px;
+}
+
+.date{
+    padding-bottom: 40px !important;
+    margin-bottom: 10px !important;
+    color: black;
+}
