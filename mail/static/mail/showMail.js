@@ -50,21 +50,29 @@ function showmail(email){
     let date = document.createElement('p');
     let body = document.createElement('p');
 
+    let reply = document.createElement('button');
+
     sender.innerHTML = `<strong>From</strong>: ${email.sender}`;
     to.innerHTML = `<strong>To</strong>: ${email.recipients}`;
     subject.innerHTML = `<strong>Subject</strong>: ${email.subject}`;
     date.innerHTML = `<strong>Timestamp</strong>: ${email.timestamp}`;
     body.innerHTML = `${email.body}`;
+    reply.innerHTML = `Reply`;
+
+    reply.classList.add('btn');
+    reply.classList.add('btn-primary');
 
     div.classList.add('container');
 
-    date.classList.add('date');
-    date.classList.add('border-bottom');
+    body.classList.add('border-top');
+    body.classList.add('mt-4');
+    body.classList.add('pt-3');
 
     div.appendChild(sender);
     div.appendChild(to);
     div.appendChild(subject);
     div.appendChild(date);
+    div.appendChild(reply);
     div.appendChild(body);
 
     document.getElementById('emails-view').innerHTML = div.outerHTML;
