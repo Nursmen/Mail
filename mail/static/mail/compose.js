@@ -1,5 +1,14 @@
 // when form is submitted
 // when DOM is loaded
+function load_mailbox(mailbox) {
+    // Show the mailbox and hide other views
+    document.querySelector('#emails-view').style.display = 'block';
+    document.querySelector('#compose-view').style.display = 'none';
+  
+    // Show the mailbox name
+    document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('compose-form').onsubmit = function() {
         let data = document.querySelectorAll('.form-control');
@@ -17,14 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         })
         .then(response => response.json())
-        .then(result => {
-            if (result.code === 201) {
-                console.log('Email sent successfully');
-            }
-            else {
-                console.log('Email not sent');
-                console.log(result['error']);
-            }
-        });
+        load_mailbox('sent');
+        return false;
     };
+
 });
